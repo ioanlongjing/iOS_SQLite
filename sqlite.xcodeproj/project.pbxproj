@@ -11,9 +11,10 @@
 		4FD317DC1B207589009AB2C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD317DB1B207589009AB2C8 /* AppDelegate.m */; };
 		4FD317DF1B207589009AB2C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD317DE1B207589009AB2C8 /* ViewController.m */; };
 		4FD317E21B207589009AB2C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FD317E01B207589009AB2C8 /* Main.storyboard */; };
-		4FD317E41B207589009AB2C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FD317E31B207589009AB2C8 /* Images.xcassets */; };
 		4FD317E71B207589009AB2C8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD317E51B207589009AB2C8 /* LaunchScreen.xib */; };
 		4FD317F31B207589009AB2C8 /* sqliteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD317F21B207589009AB2C8 /* sqliteTests.m */; };
+		4FD317FC1B208A0B009AB2C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FD317E31B207589009AB2C8 /* Images.xcassets */; };
+		4FD317FE1B208CD1009AB2C8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD317FD1B208CD1009AB2C8 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		4FD317EC1B207589009AB2C8 /* sqliteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = sqliteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FD317F11B207589009AB2C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FD317F21B207589009AB2C8 /* sqliteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = sqliteTests.m; sourceTree = "<group>"; };
+		4FD317FD1B208CD1009AB2C8 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD317FE1B208CD1009AB2C8 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		4FD317CA1B207589009AB2C8 = {
 			isa = PBXGroup;
 			children = (
+				4FD317FD1B208CD1009AB2C8 /* libsqlite3.dylib */,
 				4FD317D51B207589009AB2C8 /* sqlite */,
 				4FD317EF1B207589009AB2C8 /* sqliteTests */,
 				4FD317D41B207589009AB2C8 /* Products */,
@@ -199,9 +203,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FD317FC1B208A0B009AB2C8 /* Images.xcassets in Resources */,
 				4FD317E21B207589009AB2C8 /* Main.storyboard in Resources */,
 				4FD317E71B207589009AB2C8 /* LaunchScreen.xib in Resources */,
-				4FD317E41B207589009AB2C8 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
