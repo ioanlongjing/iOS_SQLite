@@ -24,4 +24,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)SaveData:(id)sender {
+}
+
+- (IBAction)Find:(id)sender {
+}
+
+- (IBAction)RestDB:(id)sender {
+}
 @end
