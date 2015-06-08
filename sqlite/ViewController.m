@@ -140,6 +140,52 @@
 
 - (IBAction)RestDB:(id)sender
 {
+    const char *dbpath = [_databasePath UTF8String];
+    
+    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
+    {
+        const char *dbpath = [_databasePath UTF8String];
+        
+        if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
+        {
+            char *errMsg;
+            const char *sql_stmt ="DROP TABLE contacts";
+            
+            if (sqlite3_exec(_contactDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
+            {
+                _state.text = @"Failed to drop table";
+                NSLog(@"error=%s",errMsg);
+            }
+            sqlite3_close(_contactDB);
+        }
+        else
+        {
+            _state.text = @"Failed to drop database";
+        }
+    }
+    else
+    {
+        NSLog(@"Database Path = %@", _databasePath);
+        
+    }
+    
+    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
+    {
+        char *errMsg;
+        const char *sql_stmt =
+        "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME varchar(50), ADDRESS TEXT, PHONE TEXT)";
+        
+        if (sqlite3_exec(_contactDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK)
+        {
+            _state.text = @"Failed to create table";
+            NSLog(@"error=%s",errMsg);
+        }
+        sqlite3_close(_contactDB);
+    }
+    else
+    {
+        _state.text = @"Failed to open/create database";
+    }
     
 }
 @end
