@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <sqlite3.h>
+
 
 @interface ViewController : UIViewController
+
+@property (strong, nonatomic) NSString *databasePath;
+@property (nonatomic) sqlite3 *contactDB;
 
 @property (weak, nonatomic) IBOutlet UITextField *name;
 @property (weak, nonatomic) IBOutlet UITextField *address;

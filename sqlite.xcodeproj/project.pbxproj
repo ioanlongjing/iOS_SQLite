@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F2DC20D1B259EFC001B3AB2 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD317FD1B208CD1009AB2C8 /* libsqlite3.dylib */; };
 		4FD317D91B207589009AB2C8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD317D81B207589009AB2C8 /* main.m */; };
 		4FD317DC1B207589009AB2C8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD317DB1B207589009AB2C8 /* AppDelegate.m */; };
 		4FD317DF1B207589009AB2C8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD317DE1B207589009AB2C8 /* ViewController.m */; };
@@ -14,7 +15,6 @@
 		4FD317E71B207589009AB2C8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FD317E51B207589009AB2C8 /* LaunchScreen.xib */; };
 		4FD317F31B207589009AB2C8 /* sqliteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FD317F21B207589009AB2C8 /* sqliteTests.m */; };
 		4FD317FC1B208A0B009AB2C8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FD317E31B207589009AB2C8 /* Images.xcassets */; };
-		4FD317FE1B208CD1009AB2C8 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FD317FD1B208CD1009AB2C8 /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FD317FE1B208CD1009AB2C8 /* libsqlite3.dylib in Frameworks */,
+				4F2DC20D1B259EFC001B3AB2 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +420,7 @@
 				4FD317F81B207589009AB2C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4FD317F91B207589009AB2C8 /* Build configuration list for PBXNativeTarget "sqliteTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +429,7 @@
 				4FD317FB1B207589009AB2C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
