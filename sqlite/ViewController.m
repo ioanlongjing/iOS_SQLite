@@ -86,7 +86,7 @@
             _name.text = @"";
             _address.text = @"";
             _phone.text = @"";
-            NSLog(@"Database was delete.");
+            NSLog(@"Insert Information.");
         }
         else
         {
@@ -97,9 +97,49 @@
     }
 }
 
-- (IBAction)Find:(id)sender {
+- (IBAction)Find:(id)sender
+{
+    const char *dbpath = [_databasePath UTF8String];
+    sqlite3_stmt    *statement;
+    
+    if (sqlite3_open(dbpath, &_contactDB) == SQLITE_OK)
+    {
+        NSString *querySQL = [NSString stringWithFormat:
+                              @"SELECT address, phone FROM contacts WHERE name=\"%@\"",
+                              _name.text];
+        
+        const char *query_stmt = [querySQL UTF8String];
+        
+        if (sqlite3_prepare_v2(_contactDB,
+                               query_stmt, -1, &statement, NULL) == SQLITE_OK)
+        {
+            if (sqlite3_step(statement) == SQLITE_ROW)
+            {
+                NSString *addressField = [[NSString alloc]
+                                          initWithUTF8String:
+                                          (const char *) sqlite3_column_text(
+                                                                             statement, 0)];
+                _address.text = addressField;
+                NSString *phoneField = [[NSString alloc]
+                                        initWithUTF8String:(const char *)
+                                        sqlite3_column_text(statement, 1)];
+                _phone.text = phoneField;
+                _state.text = @"Match found";
+            }
+            else
+            {
+                _state.text = @"Match not found";
+                _address.text = @"";
+                _phone.text = @"";
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(_contactDB);
+    }
 }
 
-- (IBAction)RestDB:(id)sender {
+- (IBAction)RestDB:(id)sender
+{
+    
 }
 @end
